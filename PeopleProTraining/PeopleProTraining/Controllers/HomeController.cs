@@ -13,5 +13,14 @@ namespace PeopleProTraining.Controllers
         {
             return View();
         }
+
+        // GET: /Home/Welcome/
+        public ActionResult Welcome(string name, int num_times = 1)
+        {
+            ViewBag.Message = "Hello " + name;
+            ViewBag.NumTimes = num_times;
+
+            return View();
+        }
     }
 }
