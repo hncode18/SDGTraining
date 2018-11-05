@@ -8,6 +8,15 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
+
+    @using (Html.BeginForm("Index", "Employees", FormMethod.Get))
+    {
+        <p> 
+            Name: @Html.TextBox("SearchQuery") 
+            Position: @Html.DropDownList("SearchPos", "All")
+            <input type="submit" value="Filter" />
+        </p>
+    }
 </p>
 <table class="table">
     <tr>

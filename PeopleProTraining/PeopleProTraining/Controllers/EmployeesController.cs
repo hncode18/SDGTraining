@@ -15,9 +15,29 @@ namespace PeopleProTraining.Controllers
         private EmployeeDBContext db = new EmployeeDBContext();
 
         // GET: Employees
-        public ActionResult Index()
+        public ActionResult Index(string searchQuery, string searchPos)
         {
-            return View(db.Employees.ToList());
+            var PositionList = new List<string>();
+            var PositionQuery = from d in db.Employees orderby d.position select d.position;
+
+            PositionList.AddRange(PositionQuery.Distinct());
+            ViewBag.searchPos = new SelectList(PositionList);
+
+            var employees = from e in db.Employees select e;
+
+            // produce list of employees with matching name querry
+            if (!String.IsNullOrEmpty(searchQuery))
+            {
+                employees = employees.Where(s => s.name.Contains(searchQuery));
+            }
+
+            // produce list of employees with matching position querry
+            if (!string.IsNullOrEmpty(searchPos))
+            {
+                employees = employees.Where(x => x.position == searchPos);
+            }
+
+            return View(employees);
         }
 
         // GET: Employees/Details/5
