@@ -60,5 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Departments.sql" />
+    <Build Include="Employees.sql" />
+    <Build Include="Buildings.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Departments Database.refactorlog" />
   </ItemGroup>
 </Project>
