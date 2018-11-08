@@ -66,4 +66,7 @@
   <ItemGroup>
     <RefactorLog Include="Departments Database.refactorlog" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.Post_Deploy.sql" />
+  </ItemGroup>
 </Project>
