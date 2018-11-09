@@ -12,12 +12,12 @@ namespace PeopleProTraining.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Employee
+    public partial class Building
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
-        public Nullable<double> Wage { get; set; }
-        public string Position { get; set; }
+        public string Address { get; set; }
+        public Nullable<decimal> PropertyValue { get; set; }
         public int DepartmentID { get; set; }
     
         public virtual Department Department { get; set; }
