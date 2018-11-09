@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[Buildings]
 (
-	[Id] INT NOT NULL , 
+	[Id] INT IDENTITY (1, 1) NOT NULL , 
     [Name] NVARCHAR(MAX) NOT NULL, 
     [Address] NVARCHAR(MAX) NOT NULL, 
-    [Property Value] DECIMAL(18, 2) NULL, 
+    [PropertyValue] DECIMAL(18, 2) NULL, 
 	[DepartmentID] INT NOT NULL,
     CONSTRAINT [PK_Table1] PRIMARY KEY ([Id]),
 	CONSTRAINT [FK_dbo.Buildings_dbo.Departments_ID] FOREIGN KEY ([DepartmentID])

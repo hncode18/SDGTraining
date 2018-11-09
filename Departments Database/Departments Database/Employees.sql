@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Employees]
 (
-	[ID] INT NOT NULL , 
+	[ID] INT IDENTITY (1, 1) NOT NULL , 
     [Name] NVARCHAR(MAX) NOT NULL, 
     [Wage] FLOAT NULL DEFAULT 11.25, 
     [Position] NVARCHAR(MAX) NULL, 
