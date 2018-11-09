@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DepartmentsDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DepartmentsDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Buildings">
           <Key>
             <PropertyRef Name="Id" />
@@ -33,6 +33,7 @@
           <Property Name="Wage" Type="float" />
           <Property Name="Position" Type="nvarchar(max)" />
           <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="Age" Type="int" />
         </EntityType>
         <Association Name="FK_dbo_Buildings_dbo_Departments_ID">
           <End Role="Departments" Type="Self.Departments" Multiplicity="1">
@@ -75,8 +76,7 @@
             <End Role="Employees" EntitySet="Employees" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DepartmentsDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -112,6 +112,7 @@
           <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DepartmentID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Department" Relationship="Self.FK_dbo_Employees_dbo_Departments_ID" FromRole="Employees" ToRole="Departments" />
+          <Property Name="Age" Type="Int32" />
         </EntityType>
         <Association Name="FK_dbo_Buildings_dbo_Departments_ID">
           <End Role="Departments" Type="Self.Department" Multiplicity="1">
@@ -184,6 +185,7 @@
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="DepartmentsDataModel.Employee">
               <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="Age" ColumnName="Age" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Wage" ColumnName="Wage" />

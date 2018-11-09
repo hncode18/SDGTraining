@@ -19,6 +19,7 @@ namespace PeopleProTraining.Models
         public Nullable<double> Wage { get; set; }
         public string Position { get; set; }
         public int DepartmentID { get; set; }
+        public Nullable<int> Age { get; set; }
     
         public virtual Department Department { get; set; }
     }
