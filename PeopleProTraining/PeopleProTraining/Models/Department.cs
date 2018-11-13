@@ -11,8 +11,7 @@ namespace PeopleProTraining.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Department
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,9 +23,7 @@ namespace PeopleProTraining.Models
     
         public int ID { get; set; }
         public string Name { get; set; }
-        [Display(Name = "Monthly Expenses")]
         public Nullable<double> MonthlyExpenses { get; set; }
-        [Display(Name = "Number of Employees")]
         public Nullable<int> NumEmployees { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

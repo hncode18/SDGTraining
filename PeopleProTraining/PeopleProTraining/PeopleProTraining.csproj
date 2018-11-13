@@ -214,6 +214,8 @@
     <Compile Include="Models\Employee.cs">
       <DependentUpon>DepartmentModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Metadata.cs" />
+    <Compile Include="Models\PartialClasses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
