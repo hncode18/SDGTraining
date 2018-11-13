@@ -35,6 +35,35 @@
         </dd>
 
     </dl>
+
+    <table class="table">
+        <tr>
+            <th>
+                Employee
+            </th>
+            <th>
+                Wage
+            </th>
+            <th>
+                Position
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Employees)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Wage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Position)
+                </td>
+            </tr>
+        }
+    </table>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
