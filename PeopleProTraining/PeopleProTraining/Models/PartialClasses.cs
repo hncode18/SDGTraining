@@ -15,4 +15,9 @@ namespace PeopleProTraining.Models
     public partial class Department
     {
     }
+
+    [MetadataType(typeof(BuildingMetadata))]
+    public partial class Building
+    {
+    }
 }

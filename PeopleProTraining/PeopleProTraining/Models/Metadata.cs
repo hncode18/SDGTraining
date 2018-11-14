@@ -16,6 +16,9 @@ namespace PeopleProTraining.Models
 
         [Range(11, double.MaxValue)]
         public Nullable<double> Wage { get; set; }
+
+        [Display(Name = "Department")]
+        public int DepartmentID { get; set; }
     }
 
     public class DepartmentMetadata
@@ -28,5 +31,14 @@ namespace PeopleProTraining.Models
 
         [Display(Name = "Number of Employees")]
         public Nullable<int> NumEmployees { get; set; }
+    }
+
+    public class BuildingMetadata
+    {
+        [Range(0, double.MaxValue)]
+        public Nullable<decimal> PropertyValue { get; set; }
+
+        [Display(Name = "Department")]
+        public int DepartmentID { get; set; }
     }
 }
